@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation: Text Changer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            flex-direction: column;
+	    background-color: #f5f7fa;
+	 
+
+
+        }
+
+        #displayText {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        #toggleButton {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #toggleButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="displayText">Click the button to change this text.</p>
+    <button id="toggleButton">Change Text</button>
+
+    <script>
+        const textContainer = document.getElementById("displayText");
+        const toggleBtn = document.getElementById("toggleButton");
+        let textChanged = false;
+
+        toggleBtn.addEventListener("click", () => {
+            textChanged = !textChanged;
+
+            if (textChanged) {
+                textContainer.innerText = "Text changed!";
+                textContainer.style.color = "#9400D3";
+               
+            } else {
+                textContainer.innerText = "Click the button to change this text.";
+                textContainer.style.color = "#FF1493"; 
+            
+            }
+        });
+    </script>
+
+</body>
+
+</html>
